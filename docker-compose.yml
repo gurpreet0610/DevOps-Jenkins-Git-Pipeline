@@ -7,7 +7,7 @@ services:
     environment:
       POSTGRES_USER: USER_NAME
       POSTGRES_PASSWORD: USER_PASS
-      POSTGRES_DB: ImagesDatabase
+      POSTGRES_DB: DBNAME
       PGDATA: /data/postgres
       
     volumes:
@@ -23,7 +23,7 @@ services:
     build: .
     environment:
       DBHOST: postgres_database
-      DBNAME: ImagesDatabase
+      DBNAME: DBNAME
       DBUSER: "USER_NAME"
       DBPASS: "USER_PASS"
     networks :
