@@ -24,8 +24,8 @@ services:
     environment:
       DBHOST: postgres_database
       DBNAME: ImagesDatabase
-      DBUSER: "gurpreet"
-      DBPASS: "gurpreet"
+      DBUSER: gurpreet
+      DBPASS: gurpreet
     networks :
       - admin
     ports:
