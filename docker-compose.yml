@@ -1,0 +1,51 @@
+version: "3"
+
+services:
+  postgres:
+    container_name: postgres_database
+    image: postgres
+    environment:
+      POSTGRES_USER: USER_NAME
+      POSTGRES_PASSWORD: USER_PASS
+      POSTGRES_DB: DBNAME
+      PGDATA: /data/postgres
+      
+    volumes:
+       - mydb:/data/postgres
+    networks: 
+       - admin
+    ports:
+      - "9811:5432"
+    restart: always
+  
+  web: 
+    container_name : webapp
+    build: .
+    environment:
+      DBHOST: postgres_database
+      DBNAME: ImagesDatabase
+      DBUSER: "USER_NAME"
+      DBPASS: "USER_PASS"
+    networks :
+      - admin
+    ports:
+      - "9000:5000"
+  
+  pgadmin:
+    container_name: pgadmin_container
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: user@gmail.com
+      PGADMIN_DEFAULT_PASSWORD: USER_PASS
+    networks : 
+      - admin
+    ports:
+      - "8007:80"
+    restart: always
+
+networks:
+  admin:
+    driver: bridge
+
+volumes :
+  mydb:

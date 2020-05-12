@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+    integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
+    </script>
+    <style>
+        body{
+            background-image: url(https://www.wallpaperflare.com/static/641/221/156/computer-notebook-laptop-working-wallpaper.jpg);
+            background-size: cover;
+        }
+        header{
+            background-color: rgba(0,0,0,0.5);
+            margin: 0px;
+            width: 100%;
+            height: 60px;
+            color: white;
+            text-align: center;
+            font-weight: bold;
+            padding: 0px;
+            position: fixed;
+            top: 0px;
+        }
+        header h2{
+            margin: 10px;
+        }
+        #content{
+            max-width: 500px;
+            background-color: rgba(0,0,0,0.7);
+            margin-top: 16%;
+            margin-left: 35%;
+            min-height: 300px;
+            padding: 20px;
+            text-align: center;
+        }
+        #content h1{
+            color: white;
+            text-align: center;
+        }
+        #content table{
+            text-align: center;
+            border: 1px solid white;
+            border-radius: 6px;
+            margin-left: 0%;
+            margin-top: 20px;
+            border-spacing: 0px;
+            
+        }
+        #content table th{
+            text-align: center !important;
+            border-right: 1px solid white;
+        }
+        #content table tr{
+            color: white;
+            border-top: none;
+        }
+        .table-striped>tbody>tr:nth-of-type(odd){
+            background-color: transparent;
+        }
+        .table>tbody>tr>td{
+            border-bottom: 1px solid white;
+            border-top: none;
+            color: white;
+            border-right: 1px solid white;
+        }
+        .btn-default{
+            background-image: none;
+            background-color: transparent !important;
+            text-shadow: none !important;
+            color: white !important;
+        }
+                form{
+            margin-top: 30px;
+            color: white;
+        }
+        .form-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+        label{
+            display: inline;
+            margin-right: 20px;
+            font-weight: normal;
+            font-size: 17px;
+        }
+        .nameField{
+            margin-right: 82px;
+        }
+        .form-control{
+            display: inline;
+            width: auto;
+            background-color: transparent;
+            color: white;
+
+        }
+        input::placeholder{
+            color: white;
+        }
+        .confirmDisplay{
+            color: white;
+            text-align: left;
+            margin: 24px;
+            font-size: 20px;
+        }
+        .showList{
+        color: darkkhaki;
+        text-decoration: none;
+        font-size: 20px;
+        }
+        .showList:focus{
+            outline: none;
+        }
+        .showList:focus,.showListList:hover{
+            color: darkkhaki;
+        }
+    </style>
+    {% endblock %}
+</head>
+<body>
+    <header>
+        <div>
+            <h2>Name goes here..</h2>
+        </div>
+    </header>
+    <div id="content" style="max-width: 500px; padding:10px;">{% block content %}{% endblock %}</div>
+</body>
+</html>
